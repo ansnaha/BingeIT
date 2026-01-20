@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BingeIT | Home</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+    <div class="logo">
+        <span class="logo-b">ℬ</span>
+        <span class="logo-text">Binge<span>IT</span></span>
+    </div>
+
+    <nav>
+        <a class="active" href="home.html">Home</a>
+        <a href="movie.html">Movie</a>
+        <a href="fav.html">Rating</a>
+        <a href="game.html">Games</a>
+        <a href="about.html">About Us</a>
+    </nav>
+    <div class="user">
+        <span>Hi, Welcome</span>
+        <a href="index.html">Sign Out</a>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+
+    <!-- Background Video -->
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="cut.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+        <!-- Poster -->
+        <div class="poster">
+            <img src="poster.jpg" alt="Interstellar">
+        </div>
+
+        <!-- Movie Info -->
+        <div class="info">
+            <span class="year">2017</span>
+            <h1>Interstellar Reunion</h1>
+
+            <div class="genre">
+                <span>Science Fiction</span> •
+                <span>Drama</span> •
+                <span>Action</span>
+            </div>
+
+            <p class="desc">
+                Interstellar Reunion is a science fiction film about humanity’s
+                survival beyond Earth, exploring space, time, and sacrifice.
+            </p>
+
+            <div class="details">
+                <span>⏱ 164 min</span>
+                <span>💬 Subtitles</span>
+                <span>⭐ Rating 9.1/10</span>
+            </div>
+
+           <div class="buttons">
+    <button class="play" onclick="window.open('https://www.youtube.com/watch?v=a3lcGnMhvsA&t=128s', '_blank')">
+        ▶ Watch Trailer
+    </button>  
+</div>
+
+    </div>
+</section>
+<section class="content">
+
+    <div class="section">
+    <div class="section-title">
+        <h2>LATEST RELEASE</h2>
+        <span>NEW ARRIVAL</span>
+    </div>
+
+    <div class="netflix-row">
+        <div class="movie-card">
+            <img src="intern.jpg">
+            <div class="watch-btn">WATCH NOW</div>
+        </div>
+
+        <div class="movie-card">
+            <img src="baba.jpg">
+            <div class="watch-btn">WATCH NOW</div>
+        </div>
+        <div class="movie-card">
+            <img src="how.jpg">
+            <div class="watch-btn">WATCH NOW</div>
+        </div>
+        <div class="movie-card">
+            <img src="lifeofpi.jpg">
+            <div class="watch-btn">WATCH NOW</div>
+        </div>
+        <div class="movie-card">
+            <img src="miller.jpg">
+            <div class="watch-btn">WATCH NOW</div>
+        </div>
+        <div class="movie-card">
+            <img src="pitch.jpg">
+            <div class="watch-btn">WATCH NOW</div>
+        </div>
+        <div class="movie-card">
+            <img src="crazy.jpg">
+            <div class="watch-btn">WATCH NOW</div>
+        </div>
+        <div class="movie-card">
+            <img src="13.jpg">
+            <div class="watch-btn">WATCH NOW</div>
+        </div>
+        <div class="movie-card">
+            <img src="me.jpg">
+            <div class="watch-btn">WATCH NOW</div>
+        </div>
+        <div class="movie-card">
+            <img src="it.jpg">
+            <div class="watch-btn">WATCH NOW</div>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <!-- TOP TRENDING -->
+    <div class="section trending-section">
+    <div class="section-title trending-title">
+        <h2>TOP TRENDING</h2>
+        <span>THIS WEEK</span>
+    </div>
+
+    <div class="trending-row advanced-scroll">
+        <div class="trend-card">
+            <img src="johnwick.jpg" alt="Movie 1">
+        </div>
+
+       <div class="trend-card" onclick="openPlayer('babydriver.mp4')">
+    <img src="babydriver.jpg" alt="Movie 2">
+</div>
+        <div class="trend-card">
+            <img src="topgun.jpg" alt="Movie 3">
+        </div>
+       <div class="trend-card" onclick="openPlayer('conjuring.mp4')">
+            <img src="conjuring.jpg" alt="Movie 4">
+        </div>
+         <div class="trend-card">
+            <img src="divergent.jpg" alt="Movie 5">
+        </div>
+         <div class="trend-card">
+            <img src="mean.jpg" alt="Movie 6">
+        </div>
+         <div class="trend-card">
+            <img src="inter.jpg" alt="Movie 7">
+        </div>
+          <div class="trend-card">
+            <img src="how.jpg" alt="Movie 8">
+        </div>
+          <div class="trend-card">
+            <img src="crazy.jpg" alt="Movie 9">
+        </div>
+          <div class="trend-card">
+            <img src="jumanji.jpg" alt="Movie 10">
+        </div>
+        </div>
+</div>
+
+</div>
+
+    <div class="section">
+    <div class="section-title">
+        <h2>POPULAR ON BINGEIT</h2>
+        <span>MUST WATCH</span>
+    </div>
+
+    <div class="netflix-row">
+        <div class="movie-card">
+            <img src="pride.jpg">
+            <div class="watch-btn">WATCH NOW</div>
+        </div>
+
+        <div class="movie-card">
+            <img src="hereditary.jpg">
+            <div class="watch-btn">WATCH NOW</div>
+        </div>
+
+        <div class="movie-card">
+            <img src="home.jpg">
+            <div class="watch-btn">WATCH NOW</div>
+        </div>
+        
+        <div class="movie-card">
+            <img src="fastfurious.jpg">
+            <div class="watch-btn">WATCH NOW</div>
+        </div>
+
+        <div class="movie-card">
+            <img src="annabelle.jpg">
+            <div class="watch-btn">WATCH NOW</div>
+        </div>
+        <div class="movie-card">
+            <img src="notting.jpg">
+            <div class="watch-btn">WATCH NOW</div>
+        </div>
+        <div class="movie-card">
+            <img src="13.jpg">
+            <div class="watch-btn">WATCH NOW</div>
+        </div>
+        <div class="movie-card">
+            <img src="theemazerunner.jpg">
+            <div class="watch-btn">WATCH NOW</div>
+        </div>
+        <div class="movie-card">
+            <img src="themummy.jpg">
+            <div class="watch-btn">WATCH NOW</div>
+        </div>
+        </div>
+
+<div class="advanced-genre">
+    <a href="movie.html?genre=romance" class="genre-link">
+        <div class="genre-tile romance">
+            <i class="fas fa-heart"></i>
+            <span>ROMANCE</span>
+        </div>
+    </a>
+
+    <a href="movie.html?genre=comedy" class="genre-link">
+        <div class="genre-tile comedy">
+            <i class="fas fa-laugh-beam"></i>
+            <span>COMEDY</span>
+        </div>
+    </a>
+
+    <a href="movie.html?genre=adventure" class="genre-link">
+        <div class="genre-tile adventure">
+            <i class="fas fa-map-marked-alt"></i>
+            <span>ADVENTURE</span>
+        </div>
+    </a>
+
+    <a href="movie.html?genre=horror" class="genre-link">
+        <div class="genre-tile horror">
+            <i class="fas fa-skull"></i>
+            <span>HORROR</span>
+        </div>
+    </a>
+
+    <a href="movie.html?genre=action" class="genre-link">
+        <div class="genre-tile action">
+            <i class="fas fa-fist-raised"></i>
+            <span>ACTION</span>
+        </div>
+    </a>
+
+</div>
+</div>
+
+<script>
+function openPlayer(videoFile) {
+    // This will now correctly trigger when the card is clicked
+    window.location.href = videoFile; 
+}
+</script>
+</body>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-social">
+            <a href="https://www.instagram.com/bingee_it/"  target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>  
+            <a href="https://www.tiktok.com/@bbingeit?_r=1&_d=e900f70lh2cd41&sec_uid=MS4wLjABAAAAVmyaDI6GIcG6soWjjrgChMZIogZ-iqP2e71QPBRV9bU-TR3J-CLJXJkmDyeumzFZ&share_author_id=7358803812058792968&sharer_language=en&source=h5_t&u_code=edi6313475h58c&timestamp=1768149174&user_id=7358803812058792968&sec_user_id=MS4wLjABAAAAVmyaDI6GIcG6soWjjrgChMZIogZ-iqP2e71QPBRV9bU-TR3J-CLJXJkmDyeumzFZ&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7588700632481171220&share_link_id=f289c4ab-7c34-4d8e-8f96-ebc60d0bb386&share_app_id=1180&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1"  target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a> 
+            <a href="#"  target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>   
+        </div>
+
+        <div class="footer-links">
+            <a href="#">Help Center</a>
+            <span class="divider">|</span>
+            <a href="https://wa.link/hxc0ol" target="_blank">Contact Us</a>
+            <span class="divider">|</span>
+            <a href="#">Cookie Preferences</a>
+        </div>
+
+        <div class="footer-copyright">
+            &copy; 2026 <span class="pink-text">BingeIT</span>. All rights reserved.
+        </div>
+    </div>
+</footer>
+</html>

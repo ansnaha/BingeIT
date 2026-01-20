@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BingeIt | Stream Unlimited</title>
+    <link rel="stylesheet" href="movie.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <span class="logo-b">ℬ</span>
+                <span class="logo-text">BingeIT</span>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="movie.html" class="nav-link active">Movie</a></li>
+                <li><a href="fav.html" class="nav-link">Rating</a></li>
+                <li><a href="game.html" class="nav-link">Games</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+            </ul>
+
+            <div class="nav-user">
+                <div class="search-box">
+                    <input type="text" id="movieSearch" onkeyup="searchMovies()" placeholder="Search movies...">
+                </div>
+                <span class="username">Hi, Welcome</span>
+                <a href="index.html" class="signout-btn">Sign Out</a>
+            </div>
+        </nav>
+
+        <div class="genre-nav">
+            <button class="genre-link active" onclick="filterGenre('all', this)">All</button>
+            <button class="genre-link" onclick="filterGenre('action', this)">Action</button>
+            <button class="genre-link" onclick="filterGenre('adventure', this)">Adventure</button>
+            <button class="genre-link" onclick="filterGenre('comedy', this)">Comedy</button>
+            <button class="genre-link" onclick="filterGenre('horror', this)">Horror</button>
+            <button class="genre-link" onclick="filterGenre('romance', this)">Romance</button>
+        </div>
+    </header>
+
+    <main class="container" id="mainContainer">
+        
+        <section class="genre-section" data-genre="action">
+            <h2 class="genre-title">Action</h2>
+            <div class="movie-grid">
+                <div class="movie-card" onclick="openPlayer('babydriver.mp4')">
+                    <img src="babydriver.jpg" alt="Baby Driver">
+                    <div class="overlay"><div class="movie-info"><h3>Baby Driver</h3><p>A talented getaway driver relies on music to survive dangerous heists.</p><span class="play-tag">▶ WATCH</span></div></div>
+                </div>
+                <div class="movie-card" onclick="openPlayer('https://www.youtube.com/embed/2TAOizOnNPo')"><img src="fastfurious.jpg"><div class="overlay"><div class="movie-info"><h3>The Fast and Furious</h3><p>Undercover cop enters the world of illegal street racing.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+                <div class="movie-card" onclick="openPlayer('https://www.youtube.com/embed/2AUmvWm5P2I')"><img src="johnwick.jpg"><div class="overlay"><div class="movie-info"><h3>John Wick</h3><p>A retired hitman seeks revenge after losing everything.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+                <div class="movie-card" onclick="openPlayer('https://www.youtube.com/embed/sutgWjz10sM')"><img src="divergent.jpg"><div class="overlay"><div class="movie-info"><h3>Divergent</h3><p>In a divided society, one woman discovers she is a target.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+                <div class="movie-card" onclick="openPlayer('https://www.youtube.com/embed/vw2FOYjCz38')"><img src="notimetodie.jpg"><div class="overlay"><div class="movie-info"><h3>No Time To Die</h3><p>James Bond faces a powerful new enemy with deadly tech.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+                <div class="movie-card" onclick="openPlayer('https://www.youtube.com/embed/8NDz7WzKzAD8')"><img src="tombraider.jpg"><div class="overlay"><div class="movie-info"><h3>Tomb Raider</h3><p>Lara Croft embarks on a journey to find her father's fate.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+                <div class="movie-card" onclick="openPlayer('https://www.youtube.com/embed/giXco2jaZ_4')"><img src="topgun.jpg"><div class="overlay"><div class="movie-info"><h3>Top Gun: Maverick</h3><p>An elite pilot trains a new generation for a mission.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+                <div class="movie-card" onclick="openPlayer('https://www.youtube.com/embed/eHp3MbsCbMg')"><img src="uncharted.jpg"><div class="overlay"><div class="movie-info"><h3>Uncharted</h3><p>A street-smart thief teams up with a treasure hunter.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+            </div>
+        </section>
+
+        <section class="genre-section" data-genre="adventure">
+            <h2 class="genre-title">Adventure</h2>
+            <div class="movie-grid">
+                <div class="movie-card" onclick="openPlayer('https://www.youtube.com/embed/e6ykWdU3Hqc')"><img src="indianajones.jpg"><div class="overlay"><div class="movie-info"><h3>Indiana Jones</h3><p>Archaeologist races to find a powerful ancient artifact.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+                <div class="movie-card" onclick="openPlayer('https://www.youtube.com/embed/naQr0uTrH_s')"><img src="pirateofthe.jpg"><div class="overlay"><div class="movie-info"><h3>Pirates of the Caribbean</h3><p>A pirate and a blacksmith rescue a kidnapped woman.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+                <div class="movie-card" onclick="openPlayer('https://www.youtube.com/embed/2QKg5SZ_35I')"><img src="jumanji.jpg"><div class="overlay"><div class="movie-info"><h3>Jumanji</h3><p>Teens get trapped inside a dangerous video game.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+                <div class="movie-card" onclick="openPlayer('https://www.youtube.com/embed/IjHgzkQM2Sg')"><img src="themummy.jpg"><div class="overlay"><div class="movie-info"><h3>The Mummy</h3><p>Explorers accidentally awaken an ancient, deadly curse.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+                <div class="movie-card" onclick="openPlayer('https://www.youtube.com/embed/3mMN69IdwY4')"><img src="lifeofpi.jpg"><div class="overlay"><div class="movie-info"><h3>Life of Pi</h3><p>A young boy survives a shipwreck with a Bengal tiger.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+                <div class="movie-card" onclick="openPlayer('https://www.youtube.com/embed/hLpTe8K-0-0')"><img src="journeytothecenter.jpg"><div class="overlay"><div class="movie-info"><h3>Journey to the Center</h3><p>Scientists discover a hidden world beneath the Earth.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+                <div class="movie-card" onclick="openPlayer('https://www.youtube.com/embed/AwwbhhjQ9Xk')"><img src="theemazerunner.jpg"><div class="overlay"><div class="movie-info"><h3>The Maze Runner</h3><p>A group of teens must escape a deadly shifting maze.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+                <div class="movie-card" onclick="openPlayer('https://www.youtube.com/embed/mcf789EUEWM')"><img src="nationaltreasure.jpg"><div class="overlay"><div class="movie-info"><h3>National Treasure</h3><p>A historian follows clues to find a lost treasure.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+            </div>
+        </section>
+
+        <section class="genre-section" data-genre="comedy">
+            <h2 class="genre-title">Comedy</h2>
+            <div class="movie-grid">
+                <div class="movie-card" onclick="openPlayer('URL')"><img src="crazy.jpg"><div class="overlay"><div class="movie-info"><h3>Crazy Rich Asians</h3><p>A woman travels to Singapore with her boyfriend and discovers his family is extremely wealthy and full of drama.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+ <div class="movie-card" onclick="openPlayer('meangirl.mp4')"><img src="mean.jpg"><div class="overlay"><div class="movie-info"><h3>Mean Girls</h3><p>A new student navigates high school social drama while dealing with popularity, friendship, and rivalry.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+ <div class="movie-card" onclick="openPlayer('URL')"><img src="21.jpg"><div class="overlay"><div class="movie-info"><h3>21 Jump Street</h3><p>Two undercover cops go back to high school, leading to hilarious misunderstandings and chaos.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+ <div class="movie-card" onclick="openPlayer('URL')"><img src="pitch.jpg"><div class="overlay"><div class="movie-info"><h3>Pitch Perfect</h3><p>A college a cappella group competes to win championships while dealing with rivalry and friendship.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+ <div class="movie-card" onclick="openPlayer('URL')"><img src="miller.jpg"><div class="overlay"><div class="movie-info"><h3>We're The Millers</h3><p>A small-time drug dealer creates a fake family to smuggle drugs across the border, resulting in funny situations..</p><span class="play-tag">▶ WATCH</span></div></div></div>
+ <div class="movie-card" onclick="openPlayer('URL')"><img src="home.jpg"><div class="overlay"><div class="movie-info"><h3>Home Alone</h3><p>A young boy is accidentally left home and must protect his house from two clumsy burglars.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+ <div class="movie-card" onclick="openPlayer('URL')"><img src="intern.jpg"><div class="overlay"><div class="movie-info"><h3>The Intern</h3><p>A retired man becomes an intern at a fashion company, forming an unexpected friendship with his boss..</p><span class="play-tag">▶ WATCH</span></div></div></div>
+
+
+                </div>
+
+        </section>
+
+       
+        <section class="genre-section" data-genre="horror">
+            <h2 class="genre-title">Horror</h2>
+            <div class="movie-grid">
+                <div class="movie-card" onclick="openPlayer('URL')"><img src="baba.jpg"><div class="overlay"><div class="movie-info"><h3>The Babadook</h3><p>A single mother and her son are haunted by a sinister presence that feeds on fear and grief.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+<div class="movie-card" onclick="openPlayer('URL')"><img src="sinster.jpg"><div class="overlay"><div class="movie-info"><h3>Sinister</h3><p>A writer discovers disturbing home videos that reveal a dark and deadly supernatural force.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+<div class="movie-card" onclick="openPlayer('URL')"><img src="conjuring.jpg"><div class="overlay"><div class="movie-info"><h3>The Conjuring</h3><p>Paranormal investigators help a family terrorized by a dark presence in their isolated farmhouse.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+<div class="movie-card" onclick="openPlayer('URL')"><img src="insidious.jpg"><div class="overlay"><div class="movie-info"><h3>Insidious</h3><p>A family’s son becomes trapped in a mysterious realm, allowing evil spirits to invade their home.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+<div class="movie-card" onclick="openPlayer('URL')"><img src="annabelle.jpg"><div class="overlay"><div class="movie-info"><h3>Annabelle</h3><p>A possessed doll brings terror and death to anyone who comes too close to it.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+<div class="movie-card" onclick="openPlayer('URL')"><img src="hereditary.jpg"><div class="overlay"><div class="movie-info"><h3>Hereditary</h3><p>After a family tragedy, disturbing secrets and supernatural forces slowly destroy a grieving family.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+<div class="movie-card" onclick="openPlayer('URL')"><img src="it.jpg"><div class="overlay"><div class="movie-info"><h3>IT</h3><p>A group of kids face an evil entity that takes the form of their deepest fears, often appearing as a clown.</p><span class="play-tag">▶ WATCH</span></div></div></div></div>
+        </section>
+
+        
+        <section class="genre-section" data-genre="romance">
+            <h2 class="genre-title">Romance</h2>
+            <div class="movie-grid">
+                <div class="movie-card" onclick="openPlayer('URL')"><img src="how.jpg"><div class="overlay"><div class="movie-info"><h3>How To Lose A Guy In 10 Days</h3><p>A journalist and an advertising executive start dating for opposite reasons, leading to funny and unexpected romance.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+ <div class="movie-card" onclick="openPlayer('URL')"><img src="notting.jpg"><div class="overlay"><div class="movie-info"><h3>Notting Hill</h3><p>A bookstore owner falls in love with a famous actress, navigating fame, misunderstandings, and romance.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+ <div class="movie-card" onclick="openPlayer('URL')"><img src="pride.jpg"><div class="overlay"><div class="movie-info"><h3>Pride & Prejudice</h3><p>A strong-willed young woman navigates love, family, and social expectations in 19th century England.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+ <div class="movie-card" onclick="openPlayer('URL')"><img src="13.jpg"><div class="overlay"><div class="movie-info"><h3>13 Going On 30</h3><p>A teenager magically wakes up as a 30-year-old woman and discovers love, friendship, and adulthood aren’t easy.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+ <div class="movie-card" onclick="openPlayer('URL')"><img src="love.jpg"><div class="overlay"><div class="movie-info"><h3>Love Actually</h3><p>Multiple intertwined stories show the joys, struggles, and surprises of love during the holiday season..</p><span class="play-tag">▶ WATCH</span></div></div></div>
+ <div class="movie-card" onclick="openPlayer('URL')"><img src="me.jpg"><div class="overlay"><div class="movie-info"><h3>Me Before You</h3><p>A caregiver forms an unexpected bond with a man who’s lost the will to live, leading to life-changing love.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+<div class="movie-card" onclick="openPlayer('URL')"><img src="proposal.jpg"><div class="overlay"><div class="movie-info"><h3>The Proposal</h3><p>A demanding boss convinces her assistant to marry her to avoid deportation, leading to unexpected romance.</p><span class="play-tag">▶ WATCH</span></div></div></div>
+                </div>
+        </section>
+
+    </main>
+
+    <div id="videoPlayer" class="video-overlay">
+        <span class="close-btn" onclick="closePlayer()">&times;</span>
+        <div class="video-container">
+            <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+<script>
+    function getGenreFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('genre');
+    }
+
+    window.onload = function () {
+        const genre = getGenreFromURL();
+        if (!genre) return;
+
+        const buttons = document.querySelectorAll('.genre-link');
+        const sections = document.querySelectorAll('.genre-section');
+
+        // Reset active button
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        // Filter sections
+        sections.forEach(section => {
+            section.style.display =
+                section.getAttribute('data-genre') === genre ? 'block' : 'none';
+        });
+
+        // Active correct button
+        buttons.forEach(btn => {
+            if (btn.textContent.toLowerCase() === genre) {
+                btn.classList.add('active');
+            }
+        });
+    };
+</script>
+
+
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-social">
+            <a href="https://www.instagram.com/bingee_it/"  target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>  
+            <a href="https://www.tiktok.com/@bbingeit?_r=1&_d=e900f70lh2cd41&sec_uid=MS4wLjABAAAAVmyaDI6GIcG6soWjjrgChMZIogZ-iqP2e71QPBRV9bU-TR3J-CLJXJkmDyeumzFZ&share_author_id=7358803812058792968&sharer_language=en&source=h5_t&u_code=edi6313475h58c&timestamp=1768149174&user_id=7358803812058792968&sec_user_id=MS4wLjABAAAAVmyaDI6GIcG6soWjjrgChMZIogZ-iqP2e71QPBRV9bU-TR3J-CLJXJkmDyeumzFZ&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7588700632481171220&share_link_id=f289c4ab-7c34-4d8e-8f96-ebc60d0bb386&share_app_id=1180&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1"  target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a> 
+            <a href="#"  target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>   
+        </div>
+
+        <div class="footer-links">
+            <a href="#">Help Center</a>
+            <span class="divider">|</span>
+            <a href="https://wa.link/hxc0ol" target="_blank">Contact Us</a>
+            <span class="divider">|</span>
+            <a href="#">Cookie Preferences</a>
+        </div>
+
+        <div class="footer-copyright">
+            &copy; 2026 <span class="pink-text">BingeIT</span>. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+    <script>
+        function openPlayer(url) {
+            document.getElementById('videoFrame').src = url;
+            document.getElementById('videoPlayer').style.display = 'flex';
+        }
+        function closePlayer() {
+            document.getElementById('videoPlayer').style.display = 'none';
+            document.getElementById('videoFrame').src = '';
+        }
+        function filterGenre(genre, element) {
+            const sections = document.querySelectorAll('.genre-section');
+            const buttons = document.querySelectorAll('.genre-link');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+            sections.forEach(section => {
+                section.style.display = (genre === 'all' || section.getAttribute('data-genre') === genre) ? 'block' : 'none';
+            });
+        }
+        function searchMovies() {
+            let input = document.getElementById('movieSearch').value.toLowerCase();
+            let cards = document.querySelectorAll('.movie-card');
+            cards.forEach(card => {
+                let title = card.querySelector('h3').innerText.toLowerCase();
+                card.style.display = title.includes(input) ? "block" : "none";
+            });
+        }
+    </script>
+</body>
+</html>

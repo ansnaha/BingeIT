@@ -1,0 +1,708 @@
+
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    color: white;
+    background: black;
+}
+
+/* ================= NAVBAR (ADVANCED & BIGGER) ================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    padding: 0 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.logo-b {
+    font-size: 34px;
+    color: #ff4da6;
+    font-weight: bold;
+}
+
+.logo-text {
+    color: white;
+    letter-spacing: 1px;
+}
+
+.logo-text span {
+    color: white;
+}
+
+/* Navigation */
+.navbar nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar nav a {
+    position: relative;
+    margin: 0 18px;
+    text-decoration: none;
+    color: #bbb;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 6px 0;
+    transition: color 0.3s ease;
+}
+
+/* Animated underline */
+.navbar nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: #ff4da6;
+    transition: width 0.3s ease;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: white;
+}
+
+.navbar nav a:hover::after,
+.navbar nav a.active::after {
+    width: 100%;
+}
+
+/* User Section */
+.user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.user span {
+    color: #ddd;
+}
+
+.user a {
+    color: #bbb;
+    text-decoration: none;
+    padding: 6px 16px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.user a:hover {
+    color: white;
+    border-color: #ff4da6;
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px; /* navbar height */
+}
+
+/* Background Video */
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.9),
+        rgba(0,0,0,0.3)
+    );
+    z-index: -1;
+}
+
+/* Content */
+.hero-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 80px;
+    gap: 60px;
+}
+
+/* Poster */
+.poster img {
+    width: 260px;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+}
+
+/* ================= MOVIE INFO ================= */
+.info {
+    max-width: 600px;
+}
+
+.year {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.info h1 {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+.genre {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.desc {
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.details span {
+    margin-right: 20px;
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* ================= BUTTONS ================= */
+.buttons {
+    margin-top: 30px;
+}
+
+.play {
+    background: #ff4da6;
+    border: none;
+    padding: 12px 25px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.more {
+    background: transparent;
+    border: 1px solid #aaa;
+    padding: 12px 25px;
+    color: white;
+    margin-left: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.play:hover {
+    background: darkred;
+}
+
+.more:hover {
+    border-color: white;
+}
+.section-title {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-left: 70px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* TITLE UTAMA */
+.section-title h2 {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #ff4da6,
+        #ffffff
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 5s linear infinite;
+}
+
+/* SUBTITLE */
+.section-title span {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.55);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Line cantik depan text */
+.section-title span::before {
+    content: "";
+    width: 30px;
+    height: 1px;
+    background: red;
+    opacity: 0.8;
+}
+
+/* Animation gradient */
+@keyframes shine {
+    from {
+        background-position: 0%;
+    }
+    to {
+        background-position: 200%;
+    }
+}
+
+/* ================= ADVANCED SCROLL ================= */
+.advanced-scroll {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px;
+}
+
+.advanced-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.advanced-scroll::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 10px;
+}
+
+/* ================= NETFLIX ROW ================= */
+.netflix-row {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px 0 40px;
+    scroll-behavior: smooth;
+}
+
+/* scrollbar cantik */
+.netflix-row::-webkit-scrollbar {
+    height: 8px;
+}
+.netflix-row::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+/* ================= MOVIE CARD ================= */
+.movie-card {
+    flex: 0 0 auto;              /* ❗ PENTING – elak mengecil */
+    width: 190px;                /* SAIZ NETFLIX */
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 285px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Hover Netflix zoom */
+.movie-card:hover {
+    transform: scale(1.10);
+    z-index: 10;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+}
+.movie-card {
+    position: relative;
+}
+
+.watch-btn {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff4da6;
+    color: white;
+    padding: 10px 15px;
+    font-size: 10px;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Muncul bila hover */
+.movie-card:hover .watch-btn {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* ================= TRENDING ================= */
+/* Container untuk Trending */
+.trending-row {
+    display: flex;
+    gap: 60px; /* Jarak lebih besar untuk bagi ruang pada nombor */
+    overflow-x: auto;
+    padding: 40px 0 60px 100px; /* Padding kiri ekstra untuk nombor pertama */
+    counter-reset: trending-counter; /* Mulakan kiraan nombor */
+    scroll-behavior: smooth;
+}
+
+/* Sembunyikan scrollbar tapi kekal fungsi scroll */
+.trending-row::-webkit-scrollbar {
+    height: 8px;
+}
+.trending-row::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+/* Setiap Card Movie */
+.trend-card {
+    position: relative;
+    flex: 0 0 auto;
+    width: 200px; /* Saiz poster */
+    counter-increment: trending-counter; /* Tambah 1 setiap kali card muncul */
+    transition: transform 0.3s ease;
+}
+
+/* Poster Image */
+.trend-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2; /* Supaya gambar duduk atas nombor */
+}
+
+/* Hover Effect */
+.trend-card:hover {
+    transform: scale(1.1) translateY(-10px);
+    z-index: 10;
+}
+
+/* NOMBOR BESAR (DI BELAKANG) */
+.trend-card::before {
+    content: counter(trending-counter); /* Ambil nombor automatik */
+    position: absolute;
+    left: -80px; /* Letak nombor ke kiri poster */
+    bottom: -20px;
+    font-size: 180px; /* Saiz nombor gergasi */
+    font-weight: 900;
+    line-height: 1;
+    z-index: 1; /* Duduk bawah gambar */
+    
+    /* Style nombor: Outline putih kelabu */
+    color: #000;
+    text-shadow: 
+        -2px -2px 0 #444,  
+         2px -2px 0 #444,
+        -2px  2px 0 #444,
+         2px  2px 0 #444;
+    
+    /* Guna font yang bold/tebal */
+    font-family: 'Arial Black', sans-serif;
+    transition: all 0.3s ease;
+}
+
+/* Bila hover, nombor jadi lebih terang (Pink) */
+.trend-card:hover::before {
+    text-shadow: 
+        -2px -2px 0 #ff4da6,  
+         2px -2px 0 #ff4da6,
+        -2px  2px 0 #ff4da6,
+         2px  2px 0 #ff4da6;
+    color: rgba(255, 77, 166, 0.2);
+}
+/* Tambah glow sikit untuk bahagian Popular */
+.section:nth-of-type(4) .movie-card:hover {
+    box-shadow: 0 0 20px rgba(255, 77, 166, 0.4); /* Glow warna pink BingeIT */
+}
+
+/* ================= GENRE ADVANCED ================= */
+/* Container Utama - Mengatur grid supaya kotak bersebelahan */
+.advanced-genre {
+    display: grid;
+    /* Mencipta grid yang fleksibel. 150px adalah lebar minimum setiap kotak */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 20px;
+    padding: 20px 5%;
+}
+
+/* Menghilangkan garisan biru/bawah pada link */
+.genre-link {
+    text-decoration: none;
+    display: block;
+}
+
+/* Kotak Segi Empat Sama (Square) */
+.genre-tile {
+    aspect-ratio: -0.5 / 0.5;      /* Paksa bentuk jadi segi empat sama tepat */
+    border-radius: 150px;      /* Sudut melengkung yang cantik */
+    display: flex;
+    flex-direction: column;   /* Icon di atas, Text di bawah */
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek Cahaya (Glow) pada Background */
+.genre-tile::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+    pointer-events: none;
+}
+
+/* Icon Styling */
+.genre-tile i {
+    font-size: 35px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+/* Text Styling */
+.genre-tile span {
+    font-size: 14px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* Hover Effect: Kotak naik ke atas dan membesar */
+.genre-tile:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.genre-tile:hover i {
+    transform: scale(1.2);
+}
+
+/* WARNA UNTUK SETIAP GENRE (GRADIENT) */
+.romance { background: linear-gradient(135deg, #ff4d6d, #ff758f); }
+.thriller { background: linear-gradient(135deg, #434343, #000000); }
+.comedy { background: linear-gradient(135deg, #ffb703, #fb8500); }
+.adventure { background: linear-gradient(135deg, #2a9d8f, #264653); }
+.horror { background: linear-gradient(135deg, #660708, #a4161a); }
+.action { background: linear-gradient(135deg, #003566, #000814); }
+
+/* Efek Cahaya Bergerak (Shiny Effect) */
+.genre-tile::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: 0.6s;
+}
+
+.genre-tile:hover::after {
+    left: 100%;
+    top: 100%;
+}
+.genre-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 20px;
+}
+
+/* KECILKAN TILE */
+.genre-tile {
+    height: 80px;              /* 🔥 asal besar, kecikkan */
+    padding: 10px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ICON KECIL */
+.genre-tile i {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+/* TEXT KECIL */
+.genre-tile span {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+
+/* Warna Gradient yang lebih Vibrant */
+.romantic { background: linear-gradient(135deg, #ff416c, #ff4b2b); }
+.thriller { background: linear-gradient(135deg, #654ea3, #eaafc8); }
+.comedy   { background: linear-gradient(135deg, #11998e, #38ef7d); }
+.adventure { background: linear-gradient(135deg, #f7971e, #ffd200); }
+.horror    { background: linear-gradient(135deg, #232526, #414345); }
+.action    { background: linear-gradient(135deg, #e52d27, #b31217); }
+.genre-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.footer {
+    background: #0a0a0a;
+    padding: 40px 0 20px 0;
+    border-top: 1px solid #222;
+    margin-top: 50px;
+    color: #ccc;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Social Icons */
+/* Letakkan di bahagian atas CSS atau dalam bahagian .footer */
+:root {
+    --pink: #ff4da6;
+}
+
+/* CSS untuk pastikan icon social media cantik */
+.footer-social {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icon {
+    color: white; /* Warna asal putih macam dalam gambar */
+    font-size: 28px; /* Besarkan sikit saiz icon */
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+/* Warna icon bila hover */
+.social-icon:hover {
+    color: var(--pink);
+    transform: translateY(-3px);
+}
+
+
+.footer-social {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icon {
+    color: white;
+    font-size: 24px;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: var(--pink);
+    transform: translateY(-3px);
+}
+
+/* Footer Links */
+.footer-links {
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    color: var(--pink);
+}
+
+.divider {
+    color: #444;
+}
+
+/* Copyright */
+.footer-copyright {
+    font-size: 13px;
+    color: #666;
+    padding-top: 20px;
+    border-top: 1px solid #1a1a1a;
+}
+
+.pink-text {
+    color: var(--pink);
+    font-weight: bold;
+}
+
+/* Responsive Footer */
+@media (max-width: 600px) {
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .divider {
+        display: none;
+    }
+}

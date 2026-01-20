@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #141414;
+    color: white;
+    height: 100vh;
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #ff4fa3;
+    font-size: 28px;
+}
+
+/* Center container */
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h1 {
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+/* Profiles */
+.profiles {
+    display: flex;
+    gap: 30px;
+}
+
+.profile {
+    text-align: center;
+    cursor: pointer;
+}
+
+.profile img {
+    width: 140px;
+    height: 140px;
+    border-radius: 6px;
+    transition: 0.3s;
+    object-fit: cover;
+    
+}
+
+.profile p {
+    margin-top: 10px;
+    color: #aaa;
+}
+
+.profile:hover img {
+    border: 3px solid white;
+    transform: scale(1.05);
+}
+
+.profile:hover p {
+    color: white;
+}
+
+/* Add profile */
+.add-icon {
+    width: 140px;
+    height: 140px;
+    border-radius: 6px;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    color: #999;
+    transition: 0.3s;
+}
+
+.add:hover .add-icon {
+    background-color: #555;
+    color: white;
+}
+
+/* Manage Button */
+.manage {
+    margin-top: 50px;
+    padding: 10px 30px;
+    background: transparent;
+    border: 1px solid #777;
+    color: #777;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.manage:hover {
+    color: white;
+    border-color: white;
+}
+/* Buang underline & warna default link */
+.profile {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Pastikan semua state link tak ada underline */
+.profile:link,
+.profile:visited,
+.profile:hover,
+.profile:active {
+    text-decoration: none;
+    color: inherit;
+}

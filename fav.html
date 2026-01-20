@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BingeIt | Ratings & Reviews</title>
+    <link rel="stylesheet" href="movie.css">
+    <link rel="stylesheet" href="fav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <span class="logo-b">ℬ</span>
+                <span class="logo-text">BingeIT</span>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="movie.html" class="nav-link">Movie</a></li>
+                <li><a href="fav.html" class="nav-link active">Rating</a></li>
+                <li><a href="game.html" class="nav-link">Games</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+            </ul>
+
+            <div class="nav-user">
+                <div class="search-box">
+                    <input type="text" id="movieSearch" onkeyup="searchMovies()" placeholder="Search movies...">
+                </div>
+                <span class="username">Hi, Anis</span>
+                <a href="index.html" class="signout-btn">Sign Out</a>
+            </div>
+        </nav>
+
+
+    <main class="rating-container">
+        <div class="rating-flex">
+            
+            <div class="review-area">
+                <h2 class="genre-title">Write a Review</h2>
+                <div class="review-form-card">
+                    <select id="movieSelect">
+                        <option value="" disabled selected>Select a Movie</option>
+                        <optgroup label="Action">
+                            <option>Baby Driver</option>
+                            <option>John Wick</option>
+                            <option>The Fast and The Furious</option>
+                            <option>Divergent</option>
+                            <option>No Time To Die</option>
+			    <option>Tomb Raider</option>
+			    <option>Top Gun: Maverick</option>
+			    <option>Uncharted</option>
+                        </optgroup>
+
+                        <optgroup label="Adventure">
+                            <option>Indiana Jones</option>
+                            <option>Pirates of the Caribbean</option>
+               		    <option>Jumanji:Welcome to the Jungle</option
+	          	    <option>The Mummy</option
+                            <option>Life Of Pi</option
+			    <option>Journey to the Center of the Earth</option
+	  		    <option>The Maze Runner</option
+                            <option>National Treasure</option
+                        </optgroup>
+
+                        <optgroup label="Comedy">
+                            <option>Mean Girls</option>
+                            <option>Crazy Rich Asians</option>
+               		    <option>Pitch Perfect</option
+	          	    <option>We're The Millers</option
+                            <option>Home Alone</option
+			    <option>Intern</option
+	  		    <option>21 Jump Street</option
+                        </optgroup>
+
+                        <optgroup label=Horror">
+                            <option>The Babadook</option>
+                            <option>Sinister</option>
+               		    <option>The Conjuring</option
+	          	    <option>Insidious</option
+                            <option>Annablle</option
+			    <option>Hereditary</option
+	  		    <option>It</option
+                        </optgroup>
+
+                        <optgroup label="Romance">
+                            <option>How To Lose A Guy In 10 Days</option>
+                            <option>Notting Hill</option>
+               		    <option>Pride & Prejudice</option
+	          	    <option>13 Going 30</option
+                            <option>Love Actually</option
+			    <option>Me Before You</option
+	  		    <option>The Proposal</option
+                        </optgroup>
+
+                    </select>
+
+                    <div class="star-input" id="starContainer">
+                        <i class="far fa-star" data-value="1"></i>
+                        <i class="far fa-star" data-value="2"></i>
+                        <i class="far fa-star" data-value="3"></i>
+                        <i class="far fa-star" data-value="4"></i>
+                        <i class="far fa-star" data-value="5"></i>
+                    </div>
+                    
+                    <textarea id="reviewText" rows="4" placeholder="What did you think about the movie?"></textarea>
+                    <button class="submit-btn" onclick="addReview()">Post Review</button>
+                </div>
+
+                <h2 class="feed-title">Recent Reviews</h2>
+                <div id="reviewsGrid" class="reviews-grid">
+                    </div>
+            </div>
+
+            <div class="leaderboard">
+                <h2 class="genre-title">Top 10 Leaderboard</h2>
+                <div class="top-list">
+                    <div class="top-item"><span class="rank">1</span><div class="top-info"><h4>John Wick</h4><small>⭐ 4.9 (2.1k reviews)</small></div></div>
+                    <div class="top-item"><span class="rank">2</span><div class="top-info"><h4>Baby Driver</h4><small>⭐ 4.8 (1.8k reviews)</small></div></div>
+                    <div class="top-item"><span class="rank">3</span><div class="top-info"><h4>Top Gun: Maverick</h4><small>⭐ 4.7 (3.4k reviews)</small></div></div>
+                    <div class="top-item"><span class="rank">4</span><div class="top-info"><h4>The Conjuring</h4><small>⭐ 4.6 (900 reviews)</small></div></div>
+                    <div class="top-item"><span class="rank">5</span><div class="top-info"><h4>Divergent</h4><small>⭐ 4.5 (5k reviews)</small></div></div>
+                    <div class="top-item"><span class="rank">6</span><div class="top-info"><h4>Mean Girls</h4><small>⭐ 4.4 (1.2k reviews)</small></div></div>
+                    <div class="top-item"><span class="rank">7</span><div class="top-info"><h4>Interstellar</h4><small>⭐ 4.4 (4k reviews)</small></div></div>
+                    <div class="top-item"><span class="rank">8</span><div class="top-info"><h4>How To Lose A Guy in 10 Days</h4><small>⭐ 4.3 (2.5k reviews)</small></div></div>
+                    <div class="top-item"><span class="rank">9</span><div class="top-info"><h4>Crazy Rich Asians</h4><small>⭐ 4.2 (6k reviews)</small></div></div>
+                    <div class="top-item"><span class="rank">10</span><div class="top-info"><h4>Jumanji</h4><small>⭐ 4.1 (800 reviews)</small></div></div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>  
+                <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a> 
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>    
+            </div>
+            <div class="footer-links">
+                <a href="#">Help Center</a><span class="divider">|</span>
+                <a href="#">Contact Us</a><span class="divider">|</span>
+                <a href="#">Cookie Preferences</a>
+            </div>
+            <div class="footer-copyright">&copy; 2026 <span class="pink-text">BingeIT</span>. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        let selectedRating = 0;
+
+        // Star Selection Logic
+        const stars = document.querySelectorAll('#starContainer i');
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                selectedRating = this.getAttribute('data-value');
+                stars.forEach(s => {
+                    s.classList.remove('fas', 'active');
+                    s.classList.add('far');
+                    if(s.getAttribute('data-value') <= selectedRating) {
+                        s.classList.add('fas', 'active');
+                        s.classList.remove('far');
+                    }
+                });
+            });
+        });
+
+        // Load Reviews from LocalStorage
+        window.onload = function() {
+            renderReviews();
+        }
+
+        function addReview() {
+            const movie = document.getElementById('movieSelect').value;
+            const text = document.getElementById('reviewText').value;
+
+            if(!movie || selectedRating === 0 || !text) {
+                alert("Please select a movie, star rating, and write a comment!");
+                return;
+            }
+
+            const reviewData = {
+                id: Date.now(), // Unique ID for deleting
+                movie,
+                rating: selectedRating,
+                text,
+                date: new Date().toLocaleDateString()
+            };
+            
+            const savedReviews = JSON.parse(localStorage.getItem('bingeReviews')) || [];
+            savedReviews.unshift(reviewData);
+            localStorage.setItem('bingeReviews', JSON.stringify(savedReviews));
+
+            renderReviews();
+            
+            // Reset Form
+            document.getElementById('reviewText').value = "";
+            document.getElementById('movieSelect').selectedIndex = 0;
+            selectedRating = 0;
+            stars.forEach(s => s.classList.replace('fas', 'far'));
+        }
+
+        function deleteReview(id) {
+            let savedReviews = JSON.parse(localStorage.getItem('bingeReviews')) || [];
+            savedReviews = savedReviews.filter(review => review.id !== id);
+            localStorage.setItem('bingeReviews', JSON.stringify(savedReviews));
+            renderReviews();
+        }
+
+        function renderReviews() {
+            const grid = document.getElementById('reviewsGrid');
+            const savedReviews = JSON.parse(localStorage.getItem('bingeReviews')) || [];
+            grid.innerHTML = "";
+
+            savedReviews.forEach(data => {
+                const div = document.createElement('div');
+                div.className = 'review-card';
+                
+                let starHTML = "";
+                for(let i=0; i<5; i++) {
+                    starHTML += i < data.rating ? '<i class="fas fa-star" style="color:#ff4da6"></i>' : '<i class="far fa-star"></i>';
+                }
+
+                div.innerHTML = `
+                    <div class="review-header">
+                        <h3 style="margin:0; color:#ff4da6">${data.movie}</h3>
+                        <button class="delete-btn" onclick="deleteReview(${data.id})">&times;</button>
+                    </div>
+                    <div style="margin: 10px 0;">${starHTML}</div>
+                    <p style="font-style:italic; color:#ccc">"${data.text}"</p>
+                    <small style="color:#555">Reviewed on ${data.date}</small>
+                `;
+                grid.appendChild(div);
+            });
+        }
+    </script>
+</body>
+</html>

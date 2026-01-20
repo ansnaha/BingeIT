@@ -1,0 +1,312 @@
+/* ================= GLOBAL RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+:root {
+    --pink: #ff4da6;
+    --black: #000000;
+    --card-bg: #111111;
+}
+
+body {
+    background-color: var(--black);
+    color: white;
+}
+
+/* ================= HEADER & NAVBAR (UNIFIED) ================= */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    padding: 0 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Section */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.logo-b {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 34px;
+    color: var(--pink);
+    text-shadow: 0 0 12px rgba(255, 77, 166, 0.4);
+}
+
+.logo-text {
+    font-size: 26px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    color: #bbb;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 6px 0;
+    transition: color 0.3s ease;
+}
+
+/* Pink Underline */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: var(--pink);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: white;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* User Area (Right Side) */
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Search Box Styling */
+.search-box input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: white;
+    outline: none;
+    font-size: 13px;
+}
+
+.username {
+    font-size: 14px;
+    color: #ddd;
+}
+
+.signout-btn {
+    color: #bbb;
+    text-decoration: none;
+    padding: 6px 16px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.signout-btn:hover {
+    color: white;
+    border-color: var(--pink);
+    background: rgba(255, 77, 166, 0.1);
+}
+
+/* Genre Bar (Stays the same) */
+.genre-nav { display: flex; gap: 15px; padding: 15px 5%; overflow-x: auto; scrollbar-width: none; background: rgba(0,0,0,0.5); }
+.genre-link { background: transparent; border: 1px solid #333; color: #999; padding: 6px 15px; border-radius: 4px; cursor: pointer; white-space: nowrap; transition: 0.3s; }
+.genre-link.active { color: var(--pink); border-color: var(--pink); }
+
+/* Keep all your other movie-grid, card, and footer CSS below here... */
+
+/* GENRE BAR */
+.genre-nav { display: flex; gap: 15px; padding: 15px 5%; overflow-x: auto; scrollbar-width: none; }
+.genre-nav::-webkit-scrollbar { display: none; }
+.genre-link { background: transparent; border: 1px solid #333; color: #999; padding: 6px 15px; border-radius: 4px; cursor: pointer; white-space: nowrap; }
+.genre-link.active { color: var(--pink); border-color: var(--pink); }
+
+/* SLIDER LAYOUT */
+.container { padding: 20px 5%; }
+.genre-section { margin-bottom: 40px; }
+.genre-title { font-size: 1.4rem; border-left: 4px solid var(--pink); padding-left: 15px; margin-bottom: 15px; }
+
+.movie-grid {
+    display: flex; /* Flex makes it a horizontal slider */
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scrollbar-width: none;
+}
+.movie-grid::-webkit-scrollbar { display: none; }
+
+/* BOX SIZE - SMALL */
+.movie-card {
+    flex: 0 0 auto;
+    width: 180px;  /* Small size */
+    height: 270px; /* Portrait ratio */
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--card-bg);
+    transition: transform 0.3s;
+}
+.movie-card:hover { transform: scale(1.05); }
+.movie-card img { width: 100%; height: 100%; object-fit: cover; }
+
+/* OVERLAY & DESCRIPTION */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.95));
+    opacity: 0;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 12px;
+}
+.movie-card:hover .overlay { opacity: 1; }
+.movie-info h3 { margin: 0; color: var(--pink); font-size: 0.95rem; }
+.movie-info p { font-size: 0.75rem; color: #ddd; margin: 5px 0; line-height: 1.2; }
+.play-tag { background: var(--pink); color: black; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 0.7rem; display: inline-block; }
+
+/* VIDEO PLAYER */
+.video-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; justify-content: center; align-items: center; }
+.video-container { width: 90%; max-width: 800px; aspect-ratio: 16/9; }
+iframe { width: 100%; height: 100%; }
+.close-btn { position: absolute; top: 20px; right: 40px; color: white; font-size: 40px; cursor: pointer; }
+
+
+.footer {
+    background: #0a0a0a;
+    padding: 40px 0 20px 0;
+    border-top: 1px solid #222;
+    margin-top: 50px;
+    color: #ccc;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Social Icons */
+/* Letakkan di bahagian atas CSS atau dalam bahagian .footer */
+:root {
+    --pink: #ff4da6;
+}
+
+/* CSS untuk pastikan icon social media cantik */
+.footer-social {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icon {
+    color: white; /* Warna asal putih macam dalam gambar */
+    font-size: 28px; /* Besarkan sikit saiz icon */
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+/* Warna icon bila hover */
+.social-icon:hover {
+    color: var(--pink);
+    transform: translateY(-3px);
+}
+
+
+.footer-social {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icon {
+    color: white;
+    font-size: 24px;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: var(--pink);
+    transform: translateY(-3px);
+}
+
+/* Footer Links */
+.footer-links {
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    color: var(--pink);
+}
+
+.divider {
+    color: #444;
+}
+
+/* Copyright */
+.footer-copyright {
+    font-size: 13px;
+    color: #666;
+    padding-top: 20px;
+    border-top: 1px solid #1a1a1a;
+}
+
+.pink-text {
+    color: var(--pink);
+    font-weight: bold;
+}
+
+/* Responsive Footer */
+@media (max-width: 600px) {
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .divider {
+        display: none;
+    }
+}

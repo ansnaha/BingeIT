@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BingeIT | About Us</title>
+    <link rel="stylesheet" href="aboutcss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+    <header class="header">
+    <nav class="navbar">
+
+        <a href="index.html" class="nav-logo">
+            <span class="logo-icon">ℬ</span>
+            <span class="logo-text">BingeIT</span>
+        </a>
+
+        <ul class="nav-menu">
+            <li><a href="home.html" class="nav-link">Home</a></li>
+            <li><a href="movie.html" class="nav-link">Movie</a></li>
+            <li><a href="fav.html" class="nav-link">Rating</a></li>
+            <li><a href="game.html" class="nav-link">Games</a></li>
+            <li><a href="about.html" class="nav-link active">About Us</a></li>
+        </ul>
+
+        <div class="nav-user">
+    <span class="username">Hi, Welcome</span>
+    <a href="index.html" class="signout-btn">Sign Out</a>
+</div>
+
+
+    </nav>
+</header>
+
+
+<section id="about" class="about">
+    <div class="about-container">
+        <h2>About Us</h2>
+
+        <p>
+            Welcome to <strong>BingeIT</strong>, your ultimate destination for movies,
+            ratings, and entertainment. We bring together trending films, honest ratings,
+            and interactive experiences — all in one modern platform.
+        </p>
+
+        <p>
+            Our mission is to create a smooth and enjoyable space where movie lovers can
+            discover, rate, and explore films anytime, anywhere.
+        </p>
+
+        <div class="about-features">
+            </div>
+
+<div class="content-section">
+     <div id="current-time"></div>
+    </div>
+</section>
+
+<audio autoplay loop>
+    <source src="royalty.mp3" type="audio/mpeg">
+  </audio>
+
+<section id="team-section" class="team-section">
+    <h2 class="team-title">Meet Our Team</h2>
+
+<div class="team">
+    <div class="member-card">
+         <ul class="movie"></ul>
+        <img src="nis.jpeg" alt="Anis Najiha">
+        <h4 class="name-marker">Anis Najiha</h4>
+        <p>Project Manager</p>
+    </div>
+
+    <div class="member-card">
+        <img src="yeen.jpeg" alt="Nurin Batrisya">
+        <h4 class="name-marker">  Nurin Batrisyia</h4>
+        <p>UI / UX Designer</p>
+    </div>
+
+    <div class="member-card">
+        <img src="bat.jpeg" alt="Amalia Zafira">
+        <h4 class="name-marker">Alia Batrisyia</h4>
+        <p>Frontend Developer</p>
+    </div>
+
+    <div class="member-card">
+        <img src="dila.jpeg" alt="Siti Nur Adila">
+        <h4 class="name-marker">Siti Nur Adila</h4>
+        <p>Backend Developer</p>
+    </div>
+
+    <div class="member-card">
+        <img src="me.jpeg" alt="Amir Farhan">
+        <h4 class="name-marker">Amalia Zafira</h4>
+        <p>Content & Rating Manager</p>
+    </div>
+</div>
+</section>
+
+<section class="reviews">
+
+    <h2>User Reviews</h2>
+
+    <div class="review-form">
+    <h3>Leave a Review</h3>
+
+    <input type="text" id="reviewName" placeholder="Your Name" required>
+
+    <select id="reviewRating">
+        <option value="1">⭐ 1 - Terrible</option>
+        <option value="2">⭐ 2 - Bad</option>
+        <option value="3">⭐ 3 - Okay</option>
+        <option value="4">⭐ 4 - Good</option>
+        <option value="5" selected>⭐ 5 - Excellent</option>
+    </select>
+
+    <textarea id="reviewText" rows="4" placeholder="Write your review..."></textarea>
+
+    <button type="button" onclick="addReview()">Post Review</button>
+</div>
+</section>
+
+    <div class="review-table-wrapper">
+    <table class="review-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Rating</th>
+                <th>Review</th>
+            </tr>
+        </thead>
+        <tbody id="reviewTableBody">
+            
+            <tr>
+                <td>• Anis</td>
+                <td class="stars">★★★★★</td>
+                <td>Amazing movie! The visuals and storyline were breathtaking.</td>
+            </tr>
+            <tr>
+                <td>• Hakim</td>
+               <td class="stars">★★★★★</td>
+                <td>Great concept and emotional scenes. A bit long, but enjoyable.</td>
+            </tr>
+            <tr>
+                <td>• Aisyah</td>
+                <td class="stars">★★★★★</td>
+                <td>I cried 😭 The soundtrack and story are perfect.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+function addReview() {
+    const name = document.getElementById("reviewName").value.trim();
+    const rating = document.getElementById("reviewRating").value;
+    const text = document.getElementById("reviewText").value.trim();
+
+    if (name === "" || text === "") {
+        alert("Please fill in your name and review!");
+        return;
+    }
+
+    let stars = "";
+    for (let i = 0; i < 5; i++) {
+        stars += i < rating ? "★" : "☆";
+    }
+
+    const tableBody = document.getElementById("reviewTableBody");
+
+    const row = document.createElement("tr");
+    row.innerHTML = `
+        <td>${name}</td>
+        <td class="stars">${stars}</td>
+        <td>${text}</td>
+    `;
+
+    tableBody.prepend(row);
+
+    // Clear form
+    document.getElementById("reviewName").value = "";
+    document.getElementById("reviewText").value = "";
+    document.getElementById("reviewRating").value = "5";
+}
+
+
+function updateTime() {
+    const currentDate = new Date();
+    
+    // day, date, and time
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const dayOfWeek = days[currentDate.getDay()];
+    const date = currentDate.getDate();
+    const month = currentDate.getMonth() + 1; // months are 0-11
+    const year = currentDate.getFullYear();
+    
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
+    const seconds = currentDate.getSeconds();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    const hour = hours % 12;
+    const hourFormatted = hour ? hour : 12;  // Adjust for 12:00 PM
+    const minuteFormatted = minutes < 10 ? '0' + minutes : minutes;
+    const secondFormatted = seconds < 10 ? '0' + seconds : seconds;
+
+    // Combine day, date, and time into one string using backticks
+    const dateString = `${dayOfWeek}, ${date}/${month}/${year}`;
+    const timeString = `${hourFormatted}:${minuteFormatted}:${secondFormatted} ${ampm}`;
+
+    // Display the full date and time
+    document.getElementById('current-time').textContent = `${dateString} | ${timeString}`;
+}
+
+// Initialize time immediately
+updateTime();
+setInterval(updateTime, 1000);  // Update the time every second
+   
+</script>
+
+</section>
+</body>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-social">
+            <a href="https://www.instagram.com/bingee_it/"  target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>  
+            <a href="https://www.tiktok.com/@bbingeit?_r=1&_d=e900f70lh2cd41&sec_uid=MS4wLjABAAAAVmyaDI6GIcG6soWjjrgChMZIogZ-iqP2e71QPBRV9bU-TR3J-CLJXJkmDyeumzFZ&share_author_id=7358803812058792968&sharer_language=en&source=h5_t&u_code=edi6313475h58c&timestamp=1768149174&user_id=7358803812058792968&sec_user_id=MS4wLjABAAAAVmyaDI6GIcG6soWjjrgChMZIogZ-iqP2e71QPBRV9bU-TR3J-CLJXJkmDyeumzFZ&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7588700632481171220&share_link_id=f289c4ab-7c34-4d8e-8f96-ebc60d0bb386&share_app_id=1180&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1"  target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a> 
+            <a href="#"  target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>   
+        </div>
+
+        <div class="footer-links">
+            <a href="#">Help Center</a>
+            <span class="divider">|</span>
+            <a href="https://wa.link/hxc0ol" target="_blank">Contact Us</a>
+            <span class="divider">|</span>
+            <a href="#">Cookie Preferences</a>
+        </div>
+
+        <div class="footer-copyright">
+            &copy; 2026 <span class="pink-text">BingeIT</span>. All rights reserved.
+        </div>
+    </div>
+</footer>
+</html>

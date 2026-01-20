@@ -1,0 +1,304 @@
+/* ============================================================
+   1. GLOBAL RESET & DYNAMIC BACKGROUND
+   ============================================================ */
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                url('bg_games.PNG');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================================================
+   2. NAVBAR (MATCHED TO INDEX & IMAGE)
+   ============================================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    padding: 0 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Logo Section */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo-b {
+    font-family: 'Brush Script MT', cursive; /* Matches the fancy B in image */
+    font-size: 34px;
+    color: #ff4da6;
+}
+
+.logo-text {
+    color: white;
+    letter-spacing: 1px;
+}
+
+/* Navigation Menu */
+.navbar nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar nav a {
+    position: relative;
+    margin: 0 18px;
+    text-decoration: none;
+    color: #bbb;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 6px 0;
+    transition: color 0.3s ease;
+}
+
+/* Pink Underline for Active/Hover */
+.navbar nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: #ff4da6;
+    transition: width 0.3s ease;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: white;
+}
+
+.navbar nav a:hover::after,
+.navbar nav a.active::after {
+    width: 100%;
+}
+
+/* User Area (Right Side) */
+.user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.user span {
+    color: #ddd;
+}
+
+.user a {
+    color: #bbb;
+    text-decoration: none;
+    padding: 6px 16px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.user a:hover {
+    color: white;
+    border-color: #ff4da6;
+}
+
+/* ============================================================
+   3. GAME HUB CONTENT
+   ============================================================ */
+.hub-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 130px auto 50px auto; /* Margin top added so content isn't under navbar */
+    text-align: center;
+}
+
+.main-title {
+    color: #ff4fa3;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(255, 79, 163, 0.5);
+}
+
+.subtitle {
+    color: #ffc1dd;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Game Cards Grid */
+.game-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.game-card {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 79, 163, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    width: 310px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    border-color: #ff4fa3;
+    box-shadow: 0 10px 30px rgba(255, 79, 163, 0.4);
+    background: rgba(20, 20, 20, 0.9);
+}
+
+.game-cover {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 79, 163, 0.2);
+}
+
+.game-card h2 {
+    color: #ff77c6;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.game-card p {
+    color: #ffc1dd;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    height: 45px;
+}
+
+.play-btn {
+    padding: 12px;
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #ff4fa3, #ff77c6);
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.play-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(255, 79, 163, 0.8);
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    background: #0a0a0a;
+    padding: 40px 0 20px 0;
+    border-top: 1px solid #222;
+    margin-top: 50px;
+    color: #ccc;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-social {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icon {
+    color: white;
+    font-size: 24px;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #ff4da6;
+    transform: translateY(-3px);
+}
+
+.footer-links {
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    color: #ff4da6;
+}
+
+.footer-copyright {
+    font-size: 13px;
+    color: #666;
+    padding-top: 20px;
+    border-top: 1px solid #1a1a1a;
+}
+
+.pink-text {
+    color: #ff4da6;
+    font-weight: bold;
+}
+
+/* ============================================================
+   4. RESPONSIVE DESIGN
+   ============================================================ */
+@media (max-width: 900px) {
+    .navbar nav {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 20px;
+    }
+    .main-title {
+        font-size: 2.2rem;
+    }
+    .game-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
